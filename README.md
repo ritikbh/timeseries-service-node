@@ -1,6 +1,31 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+### Request
+
+#### Endpoint
+```text
+GET /api/v2/tags
+```
+#### Parameters
+
+Name | Type | Required| Description | Schema
+------------ | ------------- | ------------- | ------------- | ------------- |  
+historianName |Query | Yes | The name of the historian to list tags of. | string
+
+### Response
+
+HTTP Code | Description | Required | Schema
+------------ | ------------- | ------------- | ------------- |  
+200 | OK | Yes | Array of TagDetails | 
+500 | Server Error | Yes | SystemException |
+
+#### TagDetails
+
+Name | Required | Description | Schema
+------------ | ------------- | ------------- |  ------------- | 
+Description | Yes | The description of the tag | string |
+Name | Yes | The name of the tag | string |
+Type | Yes | The tag type | enum (ANALOG, DIGITAL, DISCRETE, STRING) |
+Units | Yes | The unit the tag belongs to | string |
+
 
 # timeseries-service
 
